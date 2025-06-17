@@ -127,9 +127,11 @@
     <ClCompile Include="SlowString.cpp" />
     <ClCompile Include="3DTriangleList.h" />
     <ClCompile Include="SlowString.h" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalculateF.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,19 +12,12 @@
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #include <iostream>
 #include <vector>
+#include "Vector3.h"
 
-#ifndef     __3D_TRIANGLE_LIST_H_
-#define     __3D_TRIANGLE_LIST_H_
+#ifndef __3D_TRIANGLE_LIST_H_
+#define __3D_TRIANGLE_LIST_H_
 
 
-
-struct Vector3
-{
-    float x, y, z;
-
-    Vector3() : x(0.0f), y(0.0f), z(0.0f) { }
-    Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z) { }
-};
 
 struct Color
 {
@@ -83,7 +76,6 @@ public:
     {
         if (_index >= m_triangles.size())
         {
-            std::cerr << "Error: index out of bounds (" << _index << ").\n";
             std::out_of_range("TriangleList::GetTriangle: index out of range");
         }
         return m_triangles[_index];

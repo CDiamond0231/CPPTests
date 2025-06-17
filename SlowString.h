@@ -19,8 +19,8 @@
 //
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-#ifndef     __SLOW_STRING_H_
-#define     __SLOW_STRING_H_
+#ifndef __SLOW_STRING_H_
+#define __SLOW_STRING_H_
 
 
 
