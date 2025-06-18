@@ -18,8 +18,6 @@
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #include <iostream>
 #include <vector>
-#include <cmath>
-#include <limits>
 #include "Vector3.h"
 
 
