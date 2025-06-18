@@ -76,7 +76,7 @@ public:
     {
         if (_index >= m_triangles.size())
         {
-            std::out_of_range("TriangleList::GetTriangle: index out of range");
+            throw std::out_of_range("TriangleList::GetTriangle: index out of range");
         }
         return m_triangles[_index];
     }

@@ -16,7 +16,6 @@
 #include "Vector3.h"
 
 
-#define EPSILON 0.0000001
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +134,7 @@ Vector3 Vector3::operator / (float _scalar) const
 {
     if (std::abs(_scalar) < EPSILON)
     {
-        std::cerr << "Attempted division by zero\n";
+        std::cerr << "Attempted division by zero" << std::endl;
         return Vector3(0.0f, 0.0f, 0.0f);
     }
 
@@ -170,7 +169,7 @@ Vector3& Vector3::operator /= (float _scalar)
 {
     if (std::abs(_scalar) < EPSILON)
     {
-        std::cerr << "Attempted division by zero\n";
+        std::cerr << "Attempted division by zero" << std::endl;
         return *this;
     }
 

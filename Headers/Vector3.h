@@ -17,6 +17,9 @@
 #define __VECTOR3_H_
 
 
+#ifndef EPSILON
+#define EPSILON 0.0000001
+#endif
 
 class Vector3
 {
