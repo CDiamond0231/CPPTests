@@ -37,16 +37,16 @@ struct Triangle
     {
     }
 
-    Triangle(const Vector3& _v1, const Vector3& _v2, const Vector3& _v3,
-            const Color& _c1, const Color& _c2, const Color& _c3,
+    Triangle(const Vector3& _v0, const Vector3& _v1, const Vector3& _v2,
+            const Color& _c0, const Color& _c1, const Color& _c2,
             const Vector3& _normal)
     {
-        vertices[0] = _v1;
-        vertices[1] = _v2;
-        vertices[2] = _v3;
-        colors[0] = _c1;
-        colors[1] = _c2;
-        colors[2] = _c3;
+        vertices[0] = _v0;
+        vertices[1] = _v1;
+        vertices[2] = _v2;
+        colors[0] = _c0;
+        colors[1] = _c1;
+        colors[2] = _c2;
         faceNormal = _normal;
     }
 };
@@ -55,11 +55,11 @@ class TriangleList
 {
 public:
 
-    void AddTriangle(const Vector3& _v1, const Vector3& _v2, const Vector3& _v3,
-                        const Color& _c1, const Color& _c2, const Color& _c3,
+    void AddTriangle(const Vector3& _v0, const Vector3& _v1, const Vector3& _v2,
+                        const Color& _c0, const Color& _c1, const Color& _c2,
                         const Vector3& _normal)
     {
-        m_triangles.emplace_back(_v1, _v2, _v3, _c1, _c2, _c3, _normal);
+        m_triangles.emplace_back(_v0, _v1, _v2, _c0, _c1, _c2, _normal);
     }
 
     size_t Count() const

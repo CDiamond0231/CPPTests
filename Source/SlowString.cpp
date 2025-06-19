@@ -16,20 +16,26 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //              Public
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SlowString::SlowString()
-    : m_data(nullptr), m_capacity(0), m_length(0)
+SlowString::SlowString() :
+    m_data(nullptr),
+    m_capacity(0),
+    m_length(0)
 {
     Allocate(nullptr); // Empty String
 }
 
-SlowString::SlowString(const char* _s)
-    : m_data(nullptr), m_capacity(0), m_length(0)
+SlowString::SlowString(const char* _s) :
+    m_data(nullptr),
+    m_capacity(0),
+    m_length(0)
 {
     Allocate(_s);
 }
 
-SlowString::SlowString(const SlowString& _other)
-    : m_data(nullptr), m_capacity(0), m_length(0)
+SlowString::SlowString(const SlowString& _other) :
+    m_data(nullptr),
+    m_capacity(0),
+    m_length(0)
 {
     Allocate(_other.m_data);
 }

@@ -21,13 +21,24 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //              Public
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Vector3::Vector3()
-    : m_x(0.0f), m_y(0.0f), m_z(0.0f)
+Vector3::Vector3() :
+    m_x(0.0f),
+    m_y(0.0f),
+    m_z(0.0f)
 {
 }
 
-Vector3::Vector3(float _x, float _y, float _z)
-    : m_x(_x), m_y(_y), m_z(_z)
+Vector3::Vector3(float _x, float _y) :
+    m_x(_x),
+    m_y(_y),
+    m_z(0.0f)
+{
+}
+
+Vector3::Vector3(float _x, float _y, float _z) :
+    m_x(_x),
+    m_y(_y),
+    m_z(_z)
 {
 }
 
