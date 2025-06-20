@@ -27,6 +27,7 @@
     <ClInclude Include="Headers\Vector3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CubicBezierCurve.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\SlowString.cpp" />
     <ClCompile Include="Source\Vector3.cpp" />

@@ -5,12 +5,14 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  Description:
 //
-//		Please implement the following mathematical function, in the way 
-//		you think is best (explain your choice).
-//		
-//		F(0) = 0
-//		F(n) = n + F(n-1)
-//		n=1..20
+//		Please think of an algorithm that given 4 arbitrary points produces a
+//      smooth curve that connects all of them. Then write a function that takes
+//      5 parameters (4 points and a 'time' parameter between 0 and 1) and returns
+//      the point on the curve at an arbitrary 'time'.
+// 
+//      Now write a function that given an arbitrary number of points smoothly
+//      interpolates between them at a given input 'time' parameter between
+//      0 and 1.
 //
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -18,44 +20,34 @@
 #define     __CUBIC_BEZIER_CURVE_H_
 
 
+#include <vector>
 #include "Vector3.h"
 
 
 // @brief Evaluates a point on a Cubic Bezier curve at a given time 't'.
 // The curve is defined by four control points: 
 //      _pointStart, _controlPoint1, _controlPoint2, _endPoint (p0, p1, p2, p3).
-// @return The Vector2 point on the Bezier curve at parameter 't'.
-Vector3 GetPointOnCubicBezierCurve(const Vector3& _pointStart, const Vector3& _controlPoint1, 
-                                    const Vector3& _controlPoint2, const Vector3& _endPoint,
-                                    float _t)
-{
-    if (_t < 0.0f)
-    {
-        _t = 0.0f;
-    }
-    else if (_t > 1.0f)
-    {
-        _t = 1.0f;
-    }
+// @return The Vector3 point on the Bezier curve at parameter 't'.
+Vector3 GetPointOnCubicBezierCurve(const Vector3& _pointStart, const Vector3& _tangentPoint1,
+                                    const Vector3& _tangentPoint2, const Vector3& _endPoint,
+                                    float _t);
 
-    // Calculate the coefficients. Math for this came from: https://blog.maximeheckel.com/posts/cubic-bezier-from-math-to-motion/
-    float tSqr = _t * _t;
-    float invertedT = 1.0f - _t;
-    float invertedTSqr = invertedT * invertedT;
 
-    float b0 = invertedTSqr * invertedT;    // (1-t)^3
-    float b1 = 3.0f * invertedTSqr * _t;    // 3 * (1-t)^2 * t
-    float b2 = 3.0f * invertedT * tSqr;     // 3 * (1-t) * t^2
-    float b3 = tSqr * _t;                   // t^3
 
-    // Apply the formula: B(t) = b0*P0 + b1*P1 + b2*P2 + b3*P3
-    Vector3 result = (_pointStart * b0) 
-                    + (_controlPoint1 * b1)
-                    + (_controlPoint2 * b2)
-                    + (_endPoint * b3);
+// @brief This function chains multiple Cubic Bezier curves to interpolate an arbitrary number of points.
+Vector3 GetPointOnInterpolatedBezierSpline(const std::vector<Vector3>& _points, float _globalTime);
 
-    return result;
-}
+// @brief Clears the console screen using ANSI escape codes
+void ClearConsole();
 
+// @brief Convert world coordinates to console grid coordinates
+Vector3 WorldToConsole(const Vector3& _worldPoint);
+
+// @brief Renders a path in console for every point in the given path using Bezier Curve
+void DrawConsoleInterpolatationOverTime(const Vector3& _pointStart, const Vector3& _tangentPoint1,
+                                        const Vector3& _tangentPoint2, const Vector3& _endPoint);
+
+// @brief Renders a path in console for every point in the given path using Bezier Spline
+void DrawConsoleInterpolatationOverTime(std::vector<Vector3>& _pathPoints);
 
 #endif  //  __CUBIC_BEZIER_CURVE_H_

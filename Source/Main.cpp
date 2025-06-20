@@ -1,18 +1,33 @@
 
-#include <iostream>
-#include "CalculateF.h"
+
+#include "CubicBezierCurve.h"
+
+
+
 
 
 int main()
 {
-    for (int i = 0; i <= 20; ++i)
+    std::vector<Vector3> bezierCurvePathPoints =
     {
-        long long result = CalculateF(i);
-        std::cout << "F(" << i << ") = " << result << std::endl;
-    }
+        Vector3(0.0f, 0.0f),
+        Vector3(9.0f, -1.0f),
+        Vector3(10.0f, 10.0f),
+        Vector3(2.0f, 8.0f),
+    };
+    DrawConsoleInterpolatationOverTime(bezierCurvePathPoints[0], bezierCurvePathPoints[1], bezierCurvePathPoints[2], bezierCurvePathPoints[3]);
 
-    std::cin.get();
+
+    std::vector<Vector3> bezierSplinePathPoints =
+    {
+        Vector3(0.0f, 0.0f),
+        Vector3(2.0f, 8.0f),
+        Vector3(6.0f, 2.0f),
+        Vector3(10.0f, 10.0f),
+        Vector3(-1.0f, 4.0f),
+        Vector3(7.0f, 0.0f),
+        Vector3(2.0f, 11.0f)
+    };
+    DrawConsoleInterpolatationOverTime(bezierSplinePathPoints);
     return 0;
 }
-
-

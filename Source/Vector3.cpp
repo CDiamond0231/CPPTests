@@ -206,3 +206,14 @@ Vector3 Vector3::operator * (float _scalar)
 {
     return Vector3(m_x * _scalar, m_y * _scalar, m_z * _scalar);
 }
+
+
+
+
+
+
+std::ostream& operator << (std::ostream& _os, const Vector3& _vec)
+{
+    _os << "(" << _vec.GetX() << ", " << _vec.GetY() << ", " << _vec.GetZ() << ")";
+    return _os;
+}

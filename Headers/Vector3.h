@@ -21,6 +21,11 @@
 #define EPSILON 0.0000001
 #endif
 
+
+#include <iostream>
+
+
+
 class Vector3
 {
 public:
@@ -64,6 +69,9 @@ private:
     float m_z;
 };
 
+
+// Stream insertion operator for printing Vector3
+std::ostream& operator << (std::ostream& _os, const Vector3& _vec);
 
 
 #endif  //  __VECTOR3_H_
