@@ -39,13 +39,13 @@ public:
     const char* c_str() const;
 
 
-    // --- Capacity ---
+    // ~~~ Capacity ~~~
     size_t Size() const;
     size_t Capacity() const;
     bool IsEmpty() const;
     void Reserve(size_t _capacity);
 
-    // --- Modifiers ---
+    // ~~~ Modifiers ~~~
     void Clear();
 
     SlowString& Append(const char* _s);
@@ -54,7 +54,7 @@ public:
 
     SlowString Substring(size_t _fromIndex = 0, size_t _characterCount = -1) const;
 
-    // --- Operators ---
+    // ~~~ Operators ~~~
     const char& operator [] (size_t _index) const;
 
     SlowString& operator = (const SlowString& _other);

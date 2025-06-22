@@ -73,10 +73,10 @@ Vector3 GetPointOnCubicBezierCurve(const Vector3& _pointStart, const Vector3& _t
 // Math functionality came from: https://apoorvaj.io/cubic-bezier-through-four-points/
 Vector3 GetPointOnInterpolatedBezierSpline(const std::vector<Vector3>& _points, float _globalTime)
 {
-    int numPoints = (int)_points.size();
+    size_t numPoints = _points.size();
     if (numPoints == 0)
     {
-        std::cerr << "Error: Cannot interpolate an empty set of points.\n";
+        std::cerr << "Error: Cannot interpolate an empty set of points." << std::endl;
         return Vector3();
     }
     if (numPoints == 1)
@@ -102,9 +102,9 @@ Vector3 GetPointOnInterpolatedBezierSpline(const std::vector<Vector3>& _points, 
         return _points[numPoints - 1];
     }
 
-    int numSegments = numPoints - 1;
+    size_t numSegments = numPoints - 1;
     float segmentSplit = _globalTime * numSegments;
-    int segmentIndex = (int)segmentSplit;
+    size_t segmentIndex = (size_t)segmentSplit;
 
     if (segmentIndex >= numSegments)
     {
@@ -297,7 +297,7 @@ void DrawConsoleInterpolatationOverTime(std::vector<Vector3>& _pathPoints)
     const int delayMS = 60;     // Delay between frames in milliseconds
 
     // Create a character buffer for the map
-    int numPathPoints = (int)_pathPoints.size();
+    size_t numPathPoints = _pathPoints.size();
     std::vector<std::string> mapBuffer(MAP_HEIGHT, std::string(MAP_WIDTH, ' '));
 
     // Draw the border

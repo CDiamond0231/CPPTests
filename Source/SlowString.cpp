@@ -71,7 +71,7 @@ const char* SlowString::c_str() const
 }
 
 
-// --- Capacity ---
+// ~~~ Capacity ~~~
 size_t SlowString::Size() const
 {
     return m_length;
@@ -105,7 +105,7 @@ void SlowString::Reserve(size_t _capacity)
     m_capacity = _capacity;
 }
 
-// --- Modifiers ---
+// ~~~ Modifiers ~~~
 void SlowString::Clear()
 {
     m_data[0] = '\0';
@@ -165,7 +165,7 @@ SlowString SlowString::Substring(size_t _fromIndex, size_t _characterCount) cons
     return sub;
 }
 
-// --- Operators ---
+// ~~~ Operators ~~~
 const char& SlowString::operator [] (size_t _index) const
 {
     return m_data[_index];

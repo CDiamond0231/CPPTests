@@ -115,7 +115,7 @@ Vector3 Vector3::Normalised() const
 }
 
 
-// --- Operators ---
+// ~~~ Operators ~~~
 Vector3 Vector3::operator + () const 
 {
     return *this;

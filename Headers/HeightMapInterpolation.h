@@ -29,12 +29,12 @@ float GetHeightAtPoint(const std::vector<std::vector<float>>& _heightMap, float 
         return -1.0f;
     }
 
-    size_t num_cols = _heightMap.size();
-    size_t num_rows = _heightMap[0].size();
+    size_t numCols = _heightMap.size();
+    size_t numRows = _heightMap[0].size();
 
     // Checking we're within bounds
-    if (_x < 0.0f || _x >= (num_cols - 1)
-        || _y < 0.0f || _y >= (num_rows - 1))
+    if (_x < 0.0f || _x >= (numCols - 1)
+        || _y < 0.0f || _y >= (numRows - 1))
     {
         std::cerr << "Query point (" << _x << ", " << _y << ") is outside mesh boundaries." << std::endl;
         return -1.0f;
@@ -50,10 +50,10 @@ float GetHeightAtPoint(const std::vector<std::vector<float>>& _heightMap, float 
     // e.g: xy(1.5f, 2.75f) gives bounds of (1, 2, 2, 3)
     int flooredX = (int)_x;
     int flooredY = (int)_y;
-    Vector3 vA(flooredX,      flooredY,     _heightMap[flooredX][flooredY]);
-    Vector3 vB(flooredX + 1,  flooredY,     _heightMap[flooredX][flooredY + 1]);
-    Vector3 vC(flooredX + 1,  flooredY + 1, _heightMap[flooredX + 1][flooredY + 1]);
-    Vector3 vD(flooredX,      flooredY + 1, _heightMap[flooredX + 1][flooredY]);
+    Vector3 vA((float)flooredX,      (float)flooredY,     _heightMap[flooredX][flooredY]);
+    Vector3 vB((float)flooredX + 1,  (float)flooredY,     _heightMap[flooredX][flooredY + 1]);
+    Vector3 vC((float)flooredX + 1,  (float)flooredY + 1, _heightMap[flooredX + 1][flooredY + 1]);
+    Vector3 vD((float)flooredX,      (float)flooredY + 1, _heightMap[flooredX + 1][flooredY]);
 
 
     // 2. Calculate the point's local coordinates within the cell.

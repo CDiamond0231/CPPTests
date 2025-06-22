@@ -47,7 +47,7 @@ public:
     const Vector3& Normalise();
     Vector3 Normalised() const;
 
-    // --- Operators ---
+    // ~~~ Operators ~~~
     Vector3 operator + () const;
     Vector3 operator - () const;
     Vector3 operator + (const Vector3& _other) const;
