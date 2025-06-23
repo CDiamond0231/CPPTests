@@ -196,7 +196,7 @@ Vector3 WorldToConsole(const Vector3& _worldPoint)
 void DrawConsoleInterpolatationOverTime(const Vector3& _pointStart, const Vector3& _tangentPoint1,
                                         const Vector3& _tangentPoint2, const Vector3& _endPoint)
 {
-    const int numFrames = 150;  // Number of "frames" in the animation
+    const int numFrames = 60;  // Number of "frames" in the animation
     const int delayMS = 60;     // Delay between frames in milliseconds
 
     // Create a character buffer for the map

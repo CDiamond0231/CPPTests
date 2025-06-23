@@ -1,6 +1,11 @@
 
-
+#include "CalculateF.h"
+#include "CoinObjectPool.h"
 #include "CubicBezierCurve.h"
+#include "GenericVectorTemplate.h"
+#include "HeightMapInterpolation.h"
+#include "SlowString.h"
+#include "Vector3.h"
 
 
 
@@ -31,3 +36,5 @@ int main()
     DrawConsoleInterpolatationOverTime(bezierSplinePathPoints);
     return 0;
 }
+
+
