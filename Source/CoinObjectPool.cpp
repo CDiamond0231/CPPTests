@@ -89,6 +89,9 @@ int Coin::GetRemainingLifetimeFrames()
 CoinObjectPool::CoinObjectPool(int _poolSize)
 {
     m_allCoins.reserve(_poolSize);
+    m_freeCoins.reserve(_poolSize);
+    m_activeCoins.reserve(_poolSize);
+
     for (int i = 0; i < _poolSize; ++i)
     {
         m_allCoins.emplace_back();

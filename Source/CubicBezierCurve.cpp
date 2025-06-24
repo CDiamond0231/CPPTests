@@ -84,20 +84,11 @@ Vector3 GetPointOnInterpolatedBezierSpline(const std::vector<Vector3>& _points, 
         return _points[0];
     }
 
-    if (_globalTime < 0.0f)
-    {
-        _globalTime = 0.0f;
-    }
-    else if (_globalTime > 1.0f)
-    {
-        _globalTime = 1.0f;
-    }
-
-    if (_globalTime == 0.0f)
+    if (_globalTime <= 0.0f)
     {
         return _points[0];
     }
-    if (_globalTime == 1.0f)
+    else if (_globalTime >= 1.0f)
     {
         return _points[numPoints - 1];
     }
